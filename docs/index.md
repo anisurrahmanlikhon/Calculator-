@@ -1,37 +1,175 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/anisurrahmanlikhon/Calculator-/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+   <html>
+  <head> 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+      <script> 
 
-### Markdown
+         //function that display value 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+         function dis(val) 
 
-```markdown
-Syntax highlighted code block
+         { 
 
-# Header 1
-## Header 2
-### Header 3
+             document.getElementById("result").value+=val 
 
-- Bulleted
-- List
+         } 
 
-1. Numbered
-2. List
+           
 
-**Bold** and _Italic_ and `Code` text
+         //function that evaluates the digit and return result 
 
-[Link](url) and ![Image](src)
-```
+         function solve() 
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+         { 
 
-### Jekyll Themes
+             let x = document.getElementById("result").value 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anisurrahmanlikhon/Calculator-/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+             let y = eval(x) 
 
-### Support or Contact
+             document.getElementById("result").value = y 
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+         } 
+
+           
+
+         //function that clear the display 
+
+         function clr() 
+
+         { 
+
+             document.getElementById("result").value = "" 
+
+         } 
+
+      </script> 
+
+      <!-- for styling -->
+
+      <style> 
+
+         .title{ 
+
+         margin-bottom: 10px; 
+
+         text-align:center; 
+
+         width: 210px; 
+
+         color:green; 
+
+         border: solid black 2px; 
+
+         } 
+
+  
+
+         input[type="button"] 
+
+         { 
+
+         background-color:green; 
+
+         color: black; 
+
+         border: solid black 2px; 
+
+         width:100% 
+
+         } 
+
+  
+
+         input[type="text"] 
+
+         { 
+
+         background-color:white; 
+
+         border: solid black 2px; 
+
+         width:100% 
+
+         } 
+
+      </style> 
+
+   </head> 
+
+   <!-- create table -->
+
+   <body> 
+
+      <div class = title >Calculator</div> 
+
+      <table border="1"> 
+
+         <tr> 
+
+            <td colspan="3"><input type="text" id="result"/></td> 
+
+            <!-- clr() function will call clr to clear all value -->
+
+            <td><input type="button" value="c" onclick="clr()"/> </td> 
+
+         </tr> 
+
+         <tr> 
+
+            <!-- create button and assign value to each button -->
+
+            <!-- dis("1") will call function dis to display value -->
+
+            <td><input type="button" value="1" onclick="dis('1')"/> </td> 
+
+            <td><input type="button" value="2" onclick="dis('2')"/> </td> 
+
+            <td><input type="button" value="3" onclick="dis('3')"/> </td> 
+
+            <td><input type="button" value="/" onclick="dis('/')"/> </td> 
+
+         </tr> 
+
+         <tr> 
+
+            <td><input type="button" value="4" onclick="dis('4')"/> </td> 
+
+            <td><input type="button" value="5" onclick="dis('5')"/> </td> 
+
+            <td><input type="button" value="6" onclick="dis('6')"/> </td> 
+
+            <td><input type="button" value="-" onclick="dis('-')"/> </td> 
+
+         </tr> 
+
+         <tr> 
+
+            <td><input type="button" value="7" onclick="dis('7')"/> </td> 
+
+            <td><input type="button" value="8" onclick="dis('8')"/> </td> 
+
+            <td><input type="button" value="9" onclick="dis('9')"/> </td> 
+
+            <td><input type="button" value="+" onclick="dis('+')"/> </td> 
+
+         </tr> 
+
+         <tr> 
+
+            <td><input type="button" value="." onclick="dis('.')"/> </td> 
+
+            <td><input type="button" value="0" onclick="dis('0')"/> </td> 
+
+            <!-- solve function call function solve to evaluate value -->
+
+            <td><input type="button" value="=" onclick="solve()"/> </td> 
+
+            <td><input type="button" value="*" onclick="dis('*')"/> </td> 
+
+         </tr> 
+
+      </table> 
+
+   </body> 
+
+</html>    
