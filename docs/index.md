@@ -56,7 +56,7 @@
 
          width: 210px; 
 
-         color:green; 
+         color:pink; 
 
          border: solid black 2px; 
 
